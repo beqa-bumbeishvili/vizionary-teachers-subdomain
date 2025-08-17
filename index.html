@@ -1,8 +1,1284 @@
-<html>
-    <head>
-        <title>My First Webpage</title>
-    </head>
-    <body>
-        <h1>Welcome to My Teachers Page</h1>
-    </body>
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TeachChart - Clearer Lessons, Smarter Tracking, Faster Prep</title>
+	<meta name="description"
+		content="Bring your classroom to life with instant charts that simplify concepts, show student progress, and save you hours of prep time.">
+	<meta name="author" content="TeachChart">
+	<meta name="keywords"
+		content="teaching tools, education charts, student progress, classroom visualization, data charts for teachers">
+
+	<meta property="og:title" content="TeachChart - Transform Your Teaching with Visual Learning">
+	<meta property="og:description"
+		content="Create professional educational charts in seconds. Simplify teaching, track student progress, and save prep time.">
+	<meta property="og:type" content="website">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="stylesheet" crossorigin="" href="/index-DgDimExk.css">
+
+	<style type="text/css">
+		:where(html[dir="ltr"]),
+		:where([data-sonner-toaster][dir="ltr"]) {
+			--toast-icon-margin-start: -3px;
+			--toast-icon-margin-end: 4px;
+			--toast-svg-margin-start: -1px;
+			--toast-svg-margin-end: 0px;
+			--toast-button-margin-start: auto;
+			--toast-button-margin-end: 0;
+			--toast-close-button-start: 0;
+			--toast-close-button-end: unset;
+			--toast-close-button-transform: translate(-35%, -35%)
+		}
+
+		:where(html[dir="rtl"]),
+		:where([data-sonner-toaster][dir="rtl"]) {
+			--toast-icon-margin-start: 4px;
+			--toast-icon-margin-end: -3px;
+			--toast-svg-margin-start: 0px;
+			--toast-svg-margin-end: -1px;
+			--toast-button-margin-start: 0;
+			--toast-button-margin-end: auto;
+			--toast-close-button-start: unset;
+			--toast-close-button-end: 0;
+			--toast-close-button-transform: translate(35%, -35%)
+		}
+
+		:where([data-sonner-toaster]) {
+			position: fixed;
+			width: var(--width);
+			font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+			--gray1: hsl(0, 0%, 99%);
+			--gray2: hsl(0, 0%, 97.3%);
+			--gray3: hsl(0, 0%, 95.1%);
+			--gray4: hsl(0, 0%, 93%);
+			--gray5: hsl(0, 0%, 90.9%);
+			--gray6: hsl(0, 0%, 88.7%);
+			--gray7: hsl(0, 0%, 85.8%);
+			--gray8: hsl(0, 0%, 78%);
+			--gray9: hsl(0, 0%, 56.1%);
+			--gray10: hsl(0, 0%, 52.3%);
+			--gray11: hsl(0, 0%, 43.5%);
+			--gray12: hsl(0, 0%, 9%);
+			--border-radius: 8px;
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			outline: none;
+			z-index: 999999999;
+			transition: transform .4s ease
+		}
+
+		:where([data-sonner-toaster][data-lifted="true"]) {
+			transform: translateY(-10px)
+		}
+
+		@media (hover: none) and (pointer: coarse) {
+			:where([data-sonner-toaster][data-lifted="true"]) {
+				transform: none
+			}
+		}
+
+		:where([data-sonner-toaster][data-x-position="right"]) {
+			right: var(--offset-right)
+		}
+
+		:where([data-sonner-toaster][data-x-position="left"]) {
+			left: var(--offset-left)
+		}
+
+		:where([data-sonner-toaster][data-x-position="center"]) {
+			left: 50%;
+			transform: translate(-50%)
+		}
+
+		:where([data-sonner-toaster][data-y-position="top"]) {
+			top: var(--offset-top)
+		}
+
+		:where([data-sonner-toaster][data-y-position="bottom"]) {
+			bottom: var(--offset-bottom)
+		}
+
+		:where([data-sonner-toast]) {
+			--y: translateY(100%);
+			--lift-amount: calc(var(--lift) * var(--gap));
+			z-index: var(--z-index);
+			position: absolute;
+			opacity: 0;
+			transform: var(--y);
+			filter: blur(0);
+			touch-action: none;
+			transition: transform .4s, opacity .4s, height .4s, box-shadow .2s;
+			box-sizing: border-box;
+			outline: none;
+			overflow-wrap: anywhere
+		}
+
+		:where([data-sonner-toast][data-styled="true"]) {
+			padding: 16px;
+			background: var(--normal-bg);
+			border: 1px solid var(--normal-border);
+			color: var(--normal-text);
+			border-radius: var(--border-radius);
+			box-shadow: 0 4px 12px #0000001a;
+			width: var(--width);
+			font-size: 13px;
+			display: flex;
+			align-items: center;
+			gap: 6px
+		}
+
+		:where([data-sonner-toast]:focus-visible) {
+			box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003
+		}
+
+		:where([data-sonner-toast][data-y-position="top"]) {
+			top: 0;
+			--y: translateY(-100%);
+			--lift: 1;
+			--lift-amount: calc(1 * var(--gap))
+		}
+
+		:where([data-sonner-toast][data-y-position="bottom"]) {
+			bottom: 0;
+			--y: translateY(100%);
+			--lift: -1;
+			--lift-amount: calc(var(--lift) * var(--gap))
+		}
+
+		:where([data-sonner-toast]) :where([data-description]) {
+			font-weight: 400;
+			line-height: 1.4;
+			color: inherit
+		}
+
+		:where([data-sonner-toast]) :where([data-title]) {
+			font-weight: 500;
+			line-height: 1.5;
+			color: inherit
+		}
+
+		:where([data-sonner-toast]) :where([data-icon]) {
+			display: flex;
+			height: 16px;
+			width: 16px;
+			position: relative;
+			justify-content: flex-start;
+			align-items: center;
+			flex-shrink: 0;
+			margin-left: var(--toast-icon-margin-start);
+			margin-right: var(--toast-icon-margin-end)
+		}
+
+		:where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg {
+			opacity: 0;
+			transform: scale(.8);
+			transform-origin: center;
+			animation: sonner-fade-in .3s ease forwards
+		}
+
+		:where([data-sonner-toast]) :where([data-icon])>* {
+			flex-shrink: 0
+		}
+
+		:where([data-sonner-toast]) :where([data-icon]) svg {
+			margin-left: var(--toast-svg-margin-start);
+			margin-right: var(--toast-svg-margin-end)
+		}
+
+		:where([data-sonner-toast]) :where([data-content]) {
+			display: flex;
+			flex-direction: column;
+			gap: 2px
+		}
+
+		[data-sonner-toast][data-styled=true] [data-button] {
+			border-radius: 4px;
+			padding-left: 8px;
+			padding-right: 8px;
+			height: 24px;
+			font-size: 12px;
+			color: var(--normal-bg);
+			background: var(--normal-text);
+			margin-left: var(--toast-button-margin-start);
+			margin-right: var(--toast-button-margin-end);
+			border: none;
+			cursor: pointer;
+			outline: none;
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			transition: opacity .4s, box-shadow .2s
+		}
+
+		:where([data-sonner-toast]) :where([data-button]):focus-visible {
+			box-shadow: 0 0 0 2px #0006
+		}
+
+		:where([data-sonner-toast]) :where([data-button]):first-of-type {
+			margin-left: var(--toast-button-margin-start);
+			margin-right: var(--toast-button-margin-end)
+		}
+
+		:where([data-sonner-toast]) :where([data-cancel]) {
+			color: var(--normal-text);
+			background: rgba(0, 0, 0, .08)
+		}
+
+		:where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]) {
+			background: rgba(255, 255, 255, .3)
+		}
+
+		:where([data-sonner-toast]) :where([data-close-button]) {
+			position: absolute;
+			left: var(--toast-close-button-start);
+			right: var(--toast-close-button-end);
+			top: 0;
+			height: 20px;
+			width: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0;
+			color: var(--gray12);
+			border: 1px solid var(--gray4);
+			transform: var(--toast-close-button-transform);
+			border-radius: 50%;
+			cursor: pointer;
+			z-index: 1;
+			transition: opacity .1s, background .2s, border-color .2s
+		}
+
+		[data-sonner-toast] [data-close-button] {
+			background: var(--gray1)
+		}
+
+		:where([data-sonner-toast]) :where([data-close-button]):focus-visible {
+			box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003
+		}
+
+		:where([data-sonner-toast]) :where([data-disabled="true"]) {
+			cursor: not-allowed
+		}
+
+		:where([data-sonner-toast]):hover :where([data-close-button]):hover {
+			background: var(--gray2);
+			border-color: var(--gray5)
+		}
+
+		:where([data-sonner-toast][data-swiping="true"]):before {
+			content: "";
+			position: absolute;
+			left: -50%;
+			right: -50%;
+			height: 100%;
+			z-index: -1
+		}
+
+		:where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before {
+			bottom: 50%;
+			transform: scaleY(3) translateY(50%)
+		}
+
+		:where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before {
+			top: 50%;
+			transform: scaleY(3) translateY(-50%)
+		}
+
+		:where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			transform: scaleY(2)
+		}
+
+		:where([data-sonner-toast]):after {
+			content: "";
+			position: absolute;
+			left: 0;
+			height: calc(var(--gap) + 1px);
+			bottom: 100%;
+			width: 100%
+		}
+
+		:where([data-sonner-toast][data-mounted="true"]) {
+			--y: translateY(0);
+			opacity: 1
+		}
+
+		:where([data-sonner-toast][data-expanded="false"][data-front="false"]) {
+			--scale: var(--toasts-before) * .05 + 1;
+			--y: translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));
+			height: var(--front-toast-height)
+		}
+
+		:where([data-sonner-toast])>* {
+			transition: opacity .4s
+		}
+
+		:where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>* {
+			opacity: 0
+		}
+
+		:where([data-sonner-toast][data-visible="false"]) {
+			opacity: 0;
+			pointer-events: none
+		}
+
+		:where([data-sonner-toast][data-mounted="true"][data-expanded="true"]) {
+			--y: translateY(calc(var(--lift) * var(--offset)));
+			height: var(--initial-height)
+		}
+
+		:where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]) {
+			--y: translateY(calc(var(--lift) * -100%));
+			opacity: 0
+		}
+
+		:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]) {
+			--y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));
+			opacity: 0
+		}
+
+		:where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]) {
+			--y: translateY(40%);
+			opacity: 0;
+			transition: transform .5s, opacity .2s
+		}
+
+		:where([data-sonner-toast][data-removed="true"][data-front="false"]):before {
+			height: calc(var(--initial-height) + 20%)
+		}
+
+		[data-sonner-toast][data-swiping=true] {
+			transform: var(--y) translateY(var(--swipe-amount-y, 0px)) translate(var(--swipe-amount-x, 0px));
+			transition: none
+		}
+
+		[data-sonner-toast][data-swiped=true] {
+			user-select: none
+		}
+
+		[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],
+		[data-sonner-toast][data-swipe-out=true][data-y-position=top] {
+			animation-duration: .2s;
+			animation-timing-function: ease-out;
+			animation-fill-mode: forwards
+		}
+
+		[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left] {
+			animation-name: swipe-out-left
+		}
+
+		[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right] {
+			animation-name: swipe-out-right
+		}
+
+		[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up] {
+			animation-name: swipe-out-up
+		}
+
+		[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down] {
+			animation-name: swipe-out-down
+		}
+
+		@keyframes swipe-out-left {
+			0% {
+				transform: var(--y) translate(var(--swipe-amount-x));
+				opacity: 1
+			}
+
+			to {
+				transform: var(--y) translate(calc(var(--swipe-amount-x) - 100%));
+				opacity: 0
+			}
+		}
+
+		@keyframes swipe-out-right {
+			0% {
+				transform: var(--y) translate(var(--swipe-amount-x));
+				opacity: 1
+			}
+
+			to {
+				transform: var(--y) translate(calc(var(--swipe-amount-x) + 100%));
+				opacity: 0
+			}
+		}
+
+		@keyframes swipe-out-up {
+			0% {
+				transform: var(--y) translateY(var(--swipe-amount-y));
+				opacity: 1
+			}
+
+			to {
+				transform: var(--y) translateY(calc(var(--swipe-amount-y) - 100%));
+				opacity: 0
+			}
+		}
+
+		@keyframes swipe-out-down {
+			0% {
+				transform: var(--y) translateY(var(--swipe-amount-y));
+				opacity: 1
+			}
+
+			to {
+				transform: var(--y) translateY(calc(var(--swipe-amount-y) + 100%));
+				opacity: 0
+			}
+		}
+
+		@media (max-width: 600px) {
+			[data-sonner-toaster] {
+				position: fixed;
+				right: var(--mobile-offset-right);
+				left: var(--mobile-offset-left);
+				width: 100%
+			}
+
+			[data-sonner-toaster][dir=rtl] {
+				left: calc(var(--mobile-offset-left) * -1)
+			}
+
+			[data-sonner-toaster] [data-sonner-toast] {
+				left: 0;
+				right: 0;
+				width: calc(100% - var(--mobile-offset-left) * 2)
+			}
+
+			[data-sonner-toaster][data-x-position=left] {
+				left: var(--mobile-offset-left)
+			}
+
+			[data-sonner-toaster][data-y-position=bottom] {
+				bottom: var(--mobile-offset-bottom)
+			}
+
+			[data-sonner-toaster][data-y-position=top] {
+				top: var(--mobile-offset-top)
+			}
+
+			[data-sonner-toaster][data-x-position=center] {
+				left: var(--mobile-offset-left);
+				right: var(--mobile-offset-right);
+				transform: none
+			}
+		}
+
+		[data-sonner-toaster][data-theme=light] {
+			--normal-bg: #fff;
+			--normal-border: var(--gray4);
+			--normal-text: var(--gray12);
+			--success-bg: hsl(143, 85%, 96%);
+			--success-border: hsl(145, 92%, 91%);
+			--success-text: hsl(140, 100%, 27%);
+			--info-bg: hsl(208, 100%, 97%);
+			--info-border: hsl(221, 91%, 91%);
+			--info-text: hsl(210, 92%, 45%);
+			--warning-bg: hsl(49, 100%, 97%);
+			--warning-border: hsl(49, 91%, 91%);
+			--warning-text: hsl(31, 92%, 45%);
+			--error-bg: hsl(359, 100%, 97%);
+			--error-border: hsl(359, 100%, 94%);
+			--error-text: hsl(360, 100%, 45%)
+		}
+
+		[data-sonner-toaster][data-theme=light] [data-sonner-toast][data-invert=true] {
+			--normal-bg: #000;
+			--normal-border: hsl(0, 0%, 20%);
+			--normal-text: var(--gray1)
+		}
+
+		[data-sonner-toaster][data-theme=dark] [data-sonner-toast][data-invert=true] {
+			--normal-bg: #fff;
+			--normal-border: var(--gray3);
+			--normal-text: var(--gray12)
+		}
+
+		[data-sonner-toaster][data-theme=dark] {
+			--normal-bg: #000;
+			--normal-bg-hover: hsl(0, 0%, 12%);
+			--normal-border: hsl(0, 0%, 20%);
+			--normal-border-hover: hsl(0, 0%, 25%);
+			--normal-text: var(--gray1);
+			--success-bg: hsl(150, 100%, 6%);
+			--success-border: hsl(147, 100%, 12%);
+			--success-text: hsl(150, 86%, 65%);
+			--info-bg: hsl(215, 100%, 6%);
+			--info-border: hsl(223, 100%, 12%);
+			--info-text: hsl(216, 87%, 65%);
+			--warning-bg: hsl(64, 100%, 6%);
+			--warning-border: hsl(60, 100%, 12%);
+			--warning-text: hsl(46, 87%, 65%);
+			--error-bg: hsl(358, 76%, 10%);
+			--error-border: hsl(357, 89%, 16%);
+			--error-text: hsl(358, 100%, 81%)
+		}
+
+		[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button] {
+			background: var(--normal-bg);
+			border-color: var(--normal-border);
+			color: var(--normal-text)
+		}
+
+		[data-sonner-toaster][data-theme=dark] [data-sonner-toast] [data-close-button]:hover {
+			background: var(--normal-bg-hover);
+			border-color: var(--normal-border-hover)
+		}
+
+		[data-rich-colors=true][data-sonner-toast][data-type=success],
+		[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button] {
+			background: var(--success-bg);
+			border-color: var(--success-border);
+			color: var(--success-text)
+		}
+
+		[data-rich-colors=true][data-sonner-toast][data-type=info],
+		[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button] {
+			background: var(--info-bg);
+			border-color: var(--info-border);
+			color: var(--info-text)
+		}
+
+		[data-rich-colors=true][data-sonner-toast][data-type=warning],
+		[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button] {
+			background: var(--warning-bg);
+			border-color: var(--warning-border);
+			color: var(--warning-text)
+		}
+
+		[data-rich-colors=true][data-sonner-toast][data-type=error],
+		[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button] {
+			background: var(--error-bg);
+			border-color: var(--error-border);
+			color: var(--error-text)
+		}
+
+		.sonner-loading-wrapper {
+			--size: 16px;
+			height: var(--size);
+			width: var(--size);
+			position: absolute;
+			inset: 0;
+			z-index: 10
+		}
+
+		.sonner-loading-wrapper[data-visible=false] {
+			transform-origin: center;
+			animation: sonner-fade-out .2s ease forwards
+		}
+
+		.sonner-spinner {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			height: var(--size);
+			width: var(--size)
+		}
+
+		.sonner-loading-bar {
+			animation: sonner-spin 1.2s linear infinite;
+			background: var(--gray11);
+			border-radius: 6px;
+			height: 8%;
+			left: -10%;
+			position: absolute;
+			top: -3.9%;
+			width: 24%
+		}
+
+		.sonner-loading-bar:nth-child(1) {
+			animation-delay: -1.2s;
+			transform: rotate(.0001deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(2) {
+			animation-delay: -1.1s;
+			transform: rotate(30deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(3) {
+			animation-delay: -1s;
+			transform: rotate(60deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(4) {
+			animation-delay: -.9s;
+			transform: rotate(90deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(5) {
+			animation-delay: -.8s;
+			transform: rotate(120deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(6) {
+			animation-delay: -.7s;
+			transform: rotate(150deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(7) {
+			animation-delay: -.6s;
+			transform: rotate(180deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(8) {
+			animation-delay: -.5s;
+			transform: rotate(210deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(9) {
+			animation-delay: -.4s;
+			transform: rotate(240deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(10) {
+			animation-delay: -.3s;
+			transform: rotate(270deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(11) {
+			animation-delay: -.2s;
+			transform: rotate(300deg) translate(146%)
+		}
+
+		.sonner-loading-bar:nth-child(12) {
+			animation-delay: -.1s;
+			transform: rotate(330deg) translate(146%)
+		}
+
+		@keyframes sonner-fade-in {
+			0% {
+				opacity: 0;
+				transform: scale(.8)
+			}
+
+			to {
+				opacity: 1;
+				transform: scale(1)
+			}
+		}
+
+		@keyframes sonner-fade-out {
+			0% {
+				opacity: 1;
+				transform: scale(1)
+			}
+
+			to {
+				opacity: 0;
+				transform: scale(.8)
+			}
+		}
+
+		@keyframes sonner-spin {
+			0% {
+				opacity: 1
+			}
+
+			to {
+				opacity: .15
+			}
+		}
+
+		@media (prefers-reduced-motion) {
+
+			[data-sonner-toast],
+			[data-sonner-toast]>*,
+			.sonner-loading-bar {
+				transition: none !important;
+				animation: none !important
+			}
+		}
+
+		.sonner-loader {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transform-origin: center;
+			transition: opacity .2s, transform .2s
+		}
+
+		.sonner-loader[data-visible=false] {
+			opacity: 0;
+			transform: scale(.8) translate(-50%, -50%)
+		}
+	</style>
+</head>
+
+<body>
+	<div id="root">
+		<div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+			<ol tabindex="-1" data-lov-id="src/components/ui/toaster.tsx:30:6" data-lov-name="ToastViewport"
+				data-component-path="src/components/ui/toaster.tsx" data-component-line="30"
+				data-component-file="toaster.tsx" data-component-name="ToastViewport" data-component-content="%7B%7D"
+				class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+			</ol>
+		</div>
+
+		<section>
+			<nav class="navbar" style="    width: 100%;
+			height: 70px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;">
+				<div class="navbar-logo"><a href="/"><img style="margin-left: 132px;" src="/vizionary-logo.svg"
+							alt="Logo"></a></div>
+			</nav>
+		</section>
+
+		<section style="margin-top: 70px !important;" aria-label="Notifications alt+T" tabindex="-1" aria-live="polite"
+			aria-relevant="additions text" aria-atomic="false"></section>
+		<div data-lov-id="src/pages/Index.tsx:33:4" data-lov-name="div" data-component-path="src/pages/Index.tsx"
+			data-component-line="33" data-component-file="Index.tsx" data-component-name="div"
+			data-component-content="%7B%22className%22%3A%22min-h-screen%20bg-background%22%7D"
+			class="min-h-screen bg-background">
+			<section data-lov-id="src/pages/Index.tsx:35:6" data-lov-name="section"
+				data-component-path="src/pages/Index.tsx" data-component-line="35" data-component-file="Index.tsx"
+				data-component-name="section"
+				data-component-content="%7B%22className%22%3A%22container%20mx-auto%20px-4%20py-20%22%7D"
+				class="container mx-auto px-4 py-20">
+				<div data-lov-id="src/pages/Index.tsx:36:8" data-lov-name="div"
+					data-component-path="src/pages/Index.tsx" data-component-line="36" data-component-file="Index.tsx"
+					data-component-name="div"
+					data-component-content="%7B%22className%22%3A%22grid%20lg%3Agrid-cols-2%20gap-12%20items-center%22%7D"
+					class="grid lg:grid-cols-2 gap-12 items-center">
+					<div data-lov-id="src/pages/Index.tsx:37:10" data-lov-name="div"
+						data-component-path="src/pages/Index.tsx" data-component-line="37"
+						data-component-file="Index.tsx" data-component-name="div"
+						data-component-content="%7B%22className%22%3A%22space-y-8%22%7D" class="space-y-8">
+						<div data-lov-id="src/pages/Index.tsx:38:12" data-lov-name="div"
+							data-component-path="src/pages/Index.tsx" data-component-line="38"
+							data-component-file="Index.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22space-y-4%22%7D" class="space-y-4">
+							<h1 data-lov-id="src/pages/Index.tsx:39:14" data-lov-name="h1"
+								data-component-path="src/pages/Index.tsx" data-component-line="39"
+								data-component-file="Index.tsx" data-component-name="h1"
+								data-component-content="%7B%22text%22%3A%22Clearer%20Lessons.%20%20%20%20%20Faster%20Prep.%22%2C%22className%22%3A%22text-5xl%20lg%3Atext-6xl%20font-bold%20text-foreground%20leading-tight%22%7D"
+								class="text-5xl lg:text-6xl font-bold text-foreground leading-tight">Clearer Lessons
+								<span data-lov-id="src/pages/Index.tsx:41:16" data-lov-name="span"
+									data-component-path="src/pages/Index.tsx" data-component-line="41"
+									data-component-file="Index.tsx" data-component-name="span"
+									data-component-content="%7B%22text%22%3A%22Smarter%20Tracking.%22%2C%22className%22%3A%22bg-gradient-hero%20bg-clip-text%20text-transparent%22%7D"
+									class="bg-gradient-hero bg-clip-text text-transparent">Smarter Tracking</span>
+								<br>
+								Faster Prep
+							</h1>
+							<p data-lov-id="src/pages/Index.tsx:46:14" data-lov-name="p"
+								data-component-path="src/pages/Index.tsx" data-component-line="46"
+								data-component-file="Index.tsx" data-component-name="p"
+								data-component-content="%7B%22text%22%3A%22Bring%20your%20classroom%20to%20life%20with%20instant%20charts%20that%20simplify%20concepts%2C%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20show%20student%20progress%2C%20and%20save%20you%20hours%20of%20prep%20time.%22%2C%22className%22%3A%22text-xl%20text-muted-foreground%20leading-relaxed%20max-w-xl%22%7D"
+								class="text-xl text-muted-foreground leading-relaxed max-w-xl">Bring your classroom to
+								life with instant charts that simplify concepts, show student progress, and save you
+								hours of prep time.</p>
+						</div>
+						<div data-lov-id="src/pages/Index.tsx:52:12" data-lov-name="div"
+							data-component-path="src/pages/Index.tsx" data-component-line="52"
+							data-component-file="Index.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22flex%20flex-col%20sm%3Aflex-row%20gap-4%22%7D"
+							class="flex flex-col sm:flex-row gap-4">
+
+							<input type="email" required="" placeholder="Enter your email"
+								class="flex-1 w-full px-5 py-4 rounded-lg border border-border text-lg focus:outline-none focus:ring-2 focus:ring-primary transition h-12"
+								value="" style="max-width: 400px; max-height: 50px;">
+
+							<button onclick="handleSubmit(event)" data-lov-id="src/pages/Index.tsx:53:14"
+								data-lov-name="Button" data-component-path="src/pages/Index.tsx"
+								data-component-line="53" data-component-file="Index.tsx" data-component-name="Button"
+								data-component-content="%7B%22text%22%3A%22Start%20Free%20%E2%80%94%20Create%20Your%20First%20Teaching%20Chart%22%2C%22className%22%3A%22text-lg%20px-8%20py-6%22%7D"
+								class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-primary-foreground hover:shadow-glow transform hover:scale-105 transition-all duration-300 font-semibold h-11 rounded-md text-lg px-8 py-6">
+								Request Demo</button>
+						</div>
+						<p data-lov-id="src/pages/Index.tsx:58:12" data-lov-name="p"
+							data-component-path="src/pages/Index.tsx" data-component-line="58"
+							data-component-file="Index.tsx" data-component-name="p"
+							data-component-content="%7B%22text%22%3A%22Trusted%20by%20teachers%20making%20classrooms%20more%20engaging%20every%20day.%22%2C%22className%22%3A%22text-sm%20text-muted-foreground%22%7D"
+							class="text-sm text-muted-foreground">Trusted by teachers making classrooms more engaging
+							every day.</p>
+					</div>
+					<div data-lov-id="src/pages/Index.tsx:63:10" data-lov-name="div"
+						data-component-path="src/pages/Index.tsx" data-component-line="63"
+						data-component-file="Index.tsx" data-component-name="div"
+						data-component-content="%7B%22className%22%3A%22relative%22%7D" class="relative">
+						<div data-lov-id="src/pages/Index.tsx:64:12" data-lov-name="div"
+							data-component-path="src/pages/Index.tsx" data-component-line="64"
+							data-component-file="Index.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22absolute%20inset-0%20bg-gradient-hero%20opacity-20%20blur-3xl%20rounded-full%22%7D"
+							class="absolute inset-0 bg-gradient-hero opacity-20 blur-3xl rounded-full"></div><img
+							data-lov-id="src/pages/Index.tsx:65:12" data-lov-name="img"
+							data-component-path="src/pages/Index.tsx" data-component-line="65"
+							data-component-file="Index.tsx" data-component-name="img"
+							data-component-content="%7B%22className%22%3A%22relative%20z-10%20w-full%20h-auto%20rounded-2xl%20shadow-primary%22%7D"
+							src="/hero-charts-kQ_ih0Ya.jpg" alt="Educational charts and data visualization dashboard"
+							class="relative z-10 w-full h-auto rounded-2xl shadow-primary">
+					</div>
+				</div>
+			</section>
+			<section data-lov-id="src/pages/Index.tsx:75:6" data-lov-name="section"
+				data-component-path="src/pages/Index.tsx" data-component-line="75" data-component-file="Index.tsx"
+				data-component-name="section"
+				data-component-content="%7B%22className%22%3A%22container%20mx-auto%20px-4%20py-20%22%7D"
+				class="container mx-auto px-4 py-20">
+				<div data-lov-id="src/pages/Index.tsx:76:8" data-lov-name="div"
+					data-component-path="src/pages/Index.tsx" data-component-line="76" data-component-file="Index.tsx"
+					data-component-name="div" data-component-content="%7B%22className%22%3A%22text-center%20mb-16%22%7D"
+					class="text-center mb-16">
+					<h2 data-lov-id="src/pages/Index.tsx:77:10" data-lov-name="h2"
+						data-component-path="src/pages/Index.tsx" data-component-line="77"
+						data-component-file="Index.tsx" data-component-name="h2"
+						data-component-content="%7B%22text%22%3A%22Core%20Benefits%22%2C%22className%22%3A%22text-4xl%20font-bold%20text-foreground%20mb-4%22%7D"
+						class="text-4xl font-bold text-foreground mb-4">Core Benefits</h2>
+					<p data-lov-id="src/pages/Index.tsx:78:10" data-lov-name="p"
+						data-component-path="src/pages/Index.tsx" data-component-line="78"
+						data-component-file="Index.tsx" data-component-name="p"
+						data-component-content="%7B%22text%22%3A%22Everything%20you%20need%20to%20transform%20your%20teaching%20with%20the%20power%20of%20visual%20learning%22%2C%22className%22%3A%22text-xl%20text-muted-foreground%20max-w-2xl%20mx-auto%22%7D"
+						class="text-xl text-muted-foreground max-w-2xl mx-auto">Everything you need to transform your
+						teaching with the power of visual learning</p>
+				</div>
+				<div data-lov-id="src/pages/Index.tsx:83:8" data-lov-name="div"
+					data-component-path="src/pages/Index.tsx" data-component-line="83" data-component-file="Index.tsx"
+					data-component-name="div"
+					data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-3%20gap-8%22%7D"
+					class="grid md:grid-cols-3 gap-8">
+					<div data-lov-id="src/components/BenefitCard.tsx:12:4" data-lov-name="Card"
+						data-component-path="src/components/BenefitCard.tsx" data-component-line="12"
+						data-component-file="BenefitCard.tsx" data-component-name="Card"
+						data-component-content="%7B%22className%22%3A%22p-6%20bg-gradient-card%20shadow-card%20hover%3Ashadow-primary%20transition-all%20duration-300%20border-0%22%7D"
+						class="rounded-lg text-card-foreground shadow-sm p-6 bg-gradient-card shadow-card hover:shadow-primary transition-all duration-300 border-0">
+						<div data-lov-id="src/components/BenefitCard.tsx:13:6" data-lov-name="div"
+							data-component-path="src/components/BenefitCard.tsx" data-component-line="13"
+							data-component-file="BenefitCard.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22flex%20flex-col%20items-center%20text-center%20space-y-4%22%7D"
+							class="flex flex-col items-center text-center space-y-4">
+							<div data-lov-id="src/components/BenefitCard.tsx:14:8" data-lov-name="div"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="14"
+								data-component-file="BenefitCard.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22p-3%20bg-primary%2F10%20rounded-full%22%7D"
+								class="p-3 bg-primary/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg"
+									width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-book-open h-8 w-8 text-primary"
+									data-lov-id="src/components/BenefitCard.tsx:15:10" data-lov-name="Icon"
+									data-component-path="src/components/BenefitCard.tsx" data-component-line="15"
+									data-component-file="BenefitCard.tsx" data-component-name="Icon"
+									data-component-content="%7B%22className%22%3A%22h-8%20w-8%20text-primary%22%7D">
+									<path d="M12 7v14"></path>
+									<path
+										d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z">
+									</path>
+								</svg></div>
+							<h3 data-lov-id="src/components/BenefitCard.tsx:17:8" data-lov-name="h3"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="17"
+								data-component-file="BenefitCard.tsx" data-component-name="h3"
+								data-component-content="%7B%22className%22%3A%22text-xl%20font-semibold%20text-foreground%22%7D"
+								class="text-xl font-semibold text-foreground">Simplify Teaching</h3>
+							<p data-lov-id="src/components/BenefitCard.tsx:18:8" data-lov-name="p"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="18"
+								data-component-file="BenefitCard.tsx" data-component-name="p"
+								data-component-content="%7B%22className%22%3A%22text-muted-foreground%20leading-relaxed%22%7D"
+								class="text-muted-foreground leading-relaxed">Turn abstract ideas—like grammar
+								structures or historical concepts—into visuals students understand instantly.</p>
+						</div>
+					</div>
+					<div data-lov-id="src/components/BenefitCard.tsx:12:4" data-lov-name="Card"
+						data-component-path="src/components/BenefitCard.tsx" data-component-line="12"
+						data-component-file="BenefitCard.tsx" data-component-name="Card"
+						data-component-content="%7B%22className%22%3A%22p-6%20bg-gradient-card%20shadow-card%20hover%3Ashadow-primary%20transition-all%20duration-300%20border-0%22%7D"
+						class="rounded-lg text-card-foreground shadow-sm p-6 bg-gradient-card shadow-card hover:shadow-primary transition-all duration-300 border-0">
+						<div data-lov-id="src/components/BenefitCard.tsx:13:6" data-lov-name="div"
+							data-component-path="src/components/BenefitCard.tsx" data-component-line="13"
+							data-component-file="BenefitCard.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22flex%20flex-col%20items-center%20text-center%20space-y-4%22%7D"
+							class="flex flex-col items-center text-center space-y-4">
+							<div data-lov-id="src/components/BenefitCard.tsx:14:8" data-lov-name="div"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="14"
+								data-component-file="BenefitCard.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22p-3%20bg-primary%2F10%20rounded-full%22%7D"
+								class="p-3 bg-primary/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg"
+									width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-trending-up h-8 w-8 text-primary"
+									data-lov-id="src/components/BenefitCard.tsx:15:10" data-lov-name="Icon"
+									data-component-path="src/components/BenefitCard.tsx" data-component-line="15"
+									data-component-file="BenefitCard.tsx" data-component-name="Icon"
+									data-component-content="%7B%22className%22%3A%22h-8%20w-8%20text-primary%22%7D">
+									<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+									<polyline points="16 7 22 7 22 13"></polyline>
+								</svg></div>
+							<h3 data-lov-id="src/components/BenefitCard.tsx:17:8" data-lov-name="h3"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="17"
+								data-component-file="BenefitCard.tsx" data-component-name="h3"
+								data-component-content="%7B%22className%22%3A%22text-xl%20font-semibold%20text-foreground%22%7D"
+								class="text-xl font-semibold text-foreground">Track Student Progress</h3>
+							<p data-lov-id="src/components/BenefitCard.tsx:18:8" data-lov-name="p"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="18"
+								data-component-file="BenefitCard.tsx" data-component-name="p"
+								data-component-content="%7B%22className%22%3A%22text-muted-foreground%20leading-relaxed%22%7D"
+								class="text-muted-foreground leading-relaxed">Visualize scores and outcomes at a glance
+								to better support student growth.</p>
+						</div>
+					</div>
+					<div data-lov-id="src/components/BenefitCard.tsx:12:4" data-lov-name="Card"
+						data-component-path="src/components/BenefitCard.tsx" data-component-line="12"
+						data-component-file="BenefitCard.tsx" data-component-name="Card"
+						data-component-content="%7B%22className%22%3A%22p-6%20bg-gradient-card%20shadow-card%20hover%3Ashadow-primary%20transition-all%20duration-300%20border-0%22%7D"
+						class="rounded-lg text-card-foreground shadow-sm p-6 bg-gradient-card shadow-card hover:shadow-primary transition-all duration-300 border-0">
+						<div data-lov-id="src/components/BenefitCard.tsx:13:6" data-lov-name="div"
+							data-component-path="src/components/BenefitCard.tsx" data-component-line="13"
+							data-component-file="BenefitCard.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22flex%20flex-col%20items-center%20text-center%20space-y-4%22%7D"
+							class="flex flex-col items-center text-center space-y-4">
+							<div data-lov-id="src/components/BenefitCard.tsx:14:8" data-lov-name="div"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="14"
+								data-component-file="BenefitCard.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22p-3%20bg-primary%2F10%20rounded-full%22%7D"
+								class="p-3 bg-primary/10 rounded-full"><svg xmlns="http://www.w3.org/2000/svg"
+									width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									class="lucide lucide-clock h-8 w-8 text-primary"
+									data-lov-id="src/components/BenefitCard.tsx:15:10" data-lov-name="Icon"
+									data-component-path="src/components/BenefitCard.tsx" data-component-line="15"
+									data-component-file="BenefitCard.tsx" data-component-name="Icon"
+									data-component-content="%7B%22className%22%3A%22h-8%20w-8%20text-primary%22%7D">
+									<circle cx="12" cy="12" r="10"></circle>
+									<polyline points="12 6 12 12 16 14"></polyline>
+								</svg></div>
+							<h3 data-lov-id="src/components/BenefitCard.tsx:17:8" data-lov-name="h3"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="17"
+								data-component-file="BenefitCard.tsx" data-component-name="h3"
+								data-component-content="%7B%22className%22%3A%22text-xl%20font-semibold%20text-foreground%22%7D"
+								class="text-xl font-semibold text-foreground">Save Prep Time</h3>
+							<p data-lov-id="src/components/BenefitCard.tsx:18:8" data-lov-name="p"
+								data-component-path="src/components/BenefitCard.tsx" data-component-line="18"
+								data-component-file="BenefitCard.tsx" data-component-name="p"
+								data-component-content="%7B%22className%22%3A%22text-muted-foreground%20leading-relaxed%22%7D"
+								class="text-muted-foreground leading-relaxed">Create professional charts in seconds
+								without design skills.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section data-lov-id="src/pages/Index.tsx:96:6" data-lov-name="section"
+				data-component-path="src/pages/Index.tsx" data-component-line="96" data-component-file="Index.tsx"
+				data-component-name="section"
+				data-component-content="%7B%22className%22%3A%22container%20mx-auto%20px-4%20py-20%22%7D"
+				class="container mx-auto px-4 py-20">
+				<div data-lov-id="src/pages/Index.tsx:97:8" data-lov-name="div"
+					data-component-path="src/pages/Index.tsx" data-component-line="97" data-component-file="Index.tsx"
+					data-component-name="div" data-component-content="%7B%22className%22%3A%22max-w-4xl%20mx-auto%22%7D"
+					class="max-w-4xl mx-auto">
+					<div data-lov-id="src/pages/Index.tsx:98:10" data-lov-name="div"
+						data-component-path="src/pages/Index.tsx" data-component-line="98"
+						data-component-file="Index.tsx" data-component-name="div"
+						data-component-content="%7B%22className%22%3A%22text-center%20mb-16%22%7D"
+						class="text-center mb-16">
+						<h2 data-lov-id="src/pages/Index.tsx:99:12" data-lov-name="h2"
+							data-component-path="src/pages/Index.tsx" data-component-line="99"
+							data-component-file="Index.tsx" data-component-name="h2"
+							data-component-content="%7B%22text%22%3A%22Example%20Use%20Cases%22%2C%22className%22%3A%22text-4xl%20font-bold%20text-foreground%20mb-4%22%7D"
+							class="text-4xl font-bold text-foreground mb-4">Example Use Cases</h2>
+						<p data-lov-id="src/pages/Index.tsx:100:12" data-lov-name="p"
+							data-component-path="src/pages/Index.tsx" data-component-line="100"
+							data-component-file="Index.tsx" data-component-name="p"
+							data-component-content="%7B%22text%22%3A%22See%20how%20teachers%20are%20already%20using%20our%20tools%20in%20their%20classrooms%22%2C%22className%22%3A%22text-xl%20text-muted-foreground%22%7D"
+							class="text-xl text-muted-foreground">See how teachers are already using our tools in their
+							classrooms</p>
+					</div>
+					<div data-lov-id="src/pages/Index.tsx:105:10" data-lov-name="div"
+						data-component-path="src/pages/Index.tsx" data-component-line="105"
+						data-component-file="Index.tsx" data-component-name="div"
+						data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-12%20items-center%22%7D"
+						class="grid md:grid-cols-2 gap-12 items-center">
+						<div data-lov-id="src/pages/Index.tsx:106:12" data-lov-name="div"
+							data-component-path="src/pages/Index.tsx" data-component-line="106"
+							data-component-file="Index.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22space-y-6%22%7D" class="space-y-6">
+							<div data-lov-id="src/components/UseCaseItem.tsx:9:4" data-lov-name="div"
+								data-component-path="src/components/UseCaseItem.tsx" data-component-line="9"
+								data-component-file="UseCaseItem.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22flex%20items-start%20space-x-3%22%7D"
+								class="flex items-start space-x-3">
+								<div data-lov-id="src/components/UseCaseItem.tsx:10:6" data-lov-name="div"
+									data-component-path="src/components/UseCaseItem.tsx" data-component-line="10"
+									data-component-file="UseCaseItem.tsx" data-component-name="div"
+									data-component-content="%7B%22className%22%3A%22flex-shrink-0%20p-1%20bg-secondary%2F20%20rounded-full%20mt-0.5%22%7D"
+									class="flex-shrink-0 p-1 bg-secondary/20 rounded-full mt-0.5"><svg
+										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-secondary"
+										data-lov-id="src/components/UseCaseItem.tsx:11:8" data-lov-name="Check"
+										data-component-path="src/components/UseCaseItem.tsx" data-component-line="11"
+										data-component-file="UseCaseItem.tsx" data-component-name="Check"
+										data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-secondary%22%7D">
+										<path d="M20 6 9 17l-5-5"></path>
+									</svg></div>
+								<p data-lov-id="src/components/UseCaseItem.tsx:13:6" data-lov-name="p"
+									data-component-path="src/components/UseCaseItem.tsx" data-component-line="13"
+									data-component-file="UseCaseItem.tsx" data-component-name="p"
+									data-component-content="%7B%22className%22%3A%22text-foreground%20leading-relaxed%22%7D"
+									class="text-foreground leading-relaxed">Show student scores in an engaging bar
+									chart.</p>
+							</div>
+							<div data-lov-id="src/components/UseCaseItem.tsx:9:4" data-lov-name="div"
+								data-component-path="src/components/UseCaseItem.tsx" data-component-line="9"
+								data-component-file="UseCaseItem.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22flex%20items-start%20space-x-3%22%7D"
+								class="flex items-start space-x-3">
+								<div data-lov-id="src/components/UseCaseItem.tsx:10:6" data-lov-name="div"
+									data-component-path="src/components/UseCaseItem.tsx" data-component-line="10"
+									data-component-file="UseCaseItem.tsx" data-component-name="div"
+									data-component-content="%7B%22className%22%3A%22flex-shrink-0%20p-1%20bg-secondary%2F20%20rounded-full%20mt-0.5%22%7D"
+									class="flex-shrink-0 p-1 bg-secondary/20 rounded-full mt-0.5"><svg
+										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-secondary"
+										data-lov-id="src/components/UseCaseItem.tsx:11:8" data-lov-name="Check"
+										data-component-path="src/components/UseCaseItem.tsx" data-component-line="11"
+										data-component-file="UseCaseItem.tsx" data-component-name="Check"
+										data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-secondary%22%7D">
+										<path d="M20 6 9 17l-5-5"></path>
+									</svg></div>
+								<p data-lov-id="src/components/UseCaseItem.tsx:13:6" data-lov-name="p"
+									data-component-path="src/components/UseCaseItem.tsx" data-component-line="13"
+									data-component-file="UseCaseItem.tsx" data-component-name="p"
+									data-component-content="%7B%22className%22%3A%22text-foreground%20leading-relaxed%22%7D"
+									class="text-foreground leading-relaxed">Visualize historical concepts as colorful
+									pie charts.</p>
+							</div>
+							<div data-lov-id="src/components/UseCaseItem.tsx:9:4" data-lov-name="div"
+								data-component-path="src/components/UseCaseItem.tsx" data-component-line="9"
+								data-component-file="UseCaseItem.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22flex%20items-start%20space-x-3%22%7D"
+								class="flex items-start space-x-3">
+								<div data-lov-id="src/components/UseCaseItem.tsx:10:6" data-lov-name="div"
+									data-component-path="src/components/UseCaseItem.tsx" data-component-line="10"
+									data-component-file="UseCaseItem.tsx" data-component-name="div"
+									data-component-content="%7B%22className%22%3A%22flex-shrink-0%20p-1%20bg-secondary%2F20%20rounded-full%20mt-0.5%22%7D"
+									class="flex-shrink-0 p-1 bg-secondary/20 rounded-full mt-0.5"><svg
+										xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-secondary"
+										data-lov-id="src/components/UseCaseItem.tsx:11:8" data-lov-name="Check"
+										data-component-path="src/components/UseCaseItem.tsx" data-component-line="11"
+										data-component-file="UseCaseItem.tsx" data-component-name="Check"
+										data-component-content="%7B%22className%22%3A%22h-4%20w-4%20text-secondary%22%7D">
+										<path d="M20 6 9 17l-5-5"></path>
+									</svg></div>
+								<p data-lov-id="src/components/UseCaseItem.tsx:13:6" data-lov-name="p"
+									data-component-path="src/components/UseCaseItem.tsx" data-component-line="13"
+									data-component-file="UseCaseItem.tsx" data-component-name="p"
+									data-component-content="%7B%22className%22%3A%22text-foreground%20leading-relaxed%22%7D"
+									class="text-foreground leading-relaxed">Create class survey results instantly for
+									discussion.</p>
+							</div>
+						</div>
+						<div data-lov-id="src/pages/Index.tsx:112:12" data-lov-name="div"
+							data-component-path="src/pages/Index.tsx" data-component-line="112"
+							data-component-file="Index.tsx" data-component-name="div"
+							data-component-content="%7B%22className%22%3A%22grid%20grid-cols-2%20gap-4%22%7D"
+							class="grid grid-cols-2 gap-4">
+							<div data-lov-id="src/pages/Index.tsx:113:14" data-lov-name="div"
+								data-component-path="src/pages/Index.tsx" data-component-line="113"
+								data-component-file="Index.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22bg-gradient-card%20p-6%20rounded-xl%20shadow-card%22%7D"
+								class="bg-gradient-card p-6 rounded-xl shadow-card"><svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-chart-column h-12 w-12 text-primary mb-4"
+									data-lov-id="src/pages/Index.tsx:114:16" data-lov-name="BarChart3"
+									data-component-path="src/pages/Index.tsx" data-component-line="114"
+									data-component-file="Index.tsx" data-component-name="BarChart3"
+									data-component-content="%7B%22className%22%3A%22h-12%20w-12%20text-primary%20mb-4%22%7D">
+									<path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+									<path d="M18 17V9"></path>
+									<path d="M13 17V5"></path>
+									<path d="M8 17v-3"></path>
+								</svg>
+								<h4 data-lov-id="src/pages/Index.tsx:115:16" data-lov-name="h4"
+									data-component-path="src/pages/Index.tsx" data-component-line="115"
+									data-component-file="Index.tsx" data-component-name="h4"
+									data-component-content="%7B%22text%22%3A%22Bar%20Charts%22%2C%22className%22%3A%22font-semibold%20text-foreground%22%7D"
+									class="font-semibold text-foreground">Bar Charts</h4>
+								<p data-lov-id="src/pages/Index.tsx:116:16" data-lov-name="p"
+									data-component-path="src/pages/Index.tsx" data-component-line="116"
+									data-component-file="Index.tsx" data-component-name="p"
+									data-component-content="%7B%22text%22%3A%22Perfect%20for%20scores%20and%20comparisons%22%2C%22className%22%3A%22text-sm%20text-muted-foreground%22%7D"
+									class="text-sm text-muted-foreground">Perfect for scores and comparisons</p>
+							</div>
+							<div data-lov-id="src/pages/Index.tsx:118:14" data-lov-name="div"
+								data-component-path="src/pages/Index.tsx" data-component-line="118"
+								data-component-file="Index.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22bg-gradient-card%20p-6%20rounded-xl%20shadow-card%22%7D"
+								class="bg-gradient-card p-6 rounded-xl shadow-card"><svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-chart-pie h-12 w-12 text-secondary mb-4"
+									data-lov-id="src/pages/Index.tsx:119:16" data-lov-name="PieChart"
+									data-component-path="src/pages/Index.tsx" data-component-line="119"
+									data-component-file="Index.tsx" data-component-name="PieChart"
+									data-component-content="%7B%22className%22%3A%22h-12%20w-12%20text-secondary%20mb-4%22%7D">
+									<path
+										d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z">
+									</path>
+									<path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+								</svg>
+								<h4 data-lov-id="src/pages/Index.tsx:120:16" data-lov-name="h4"
+									data-component-path="src/pages/Index.tsx" data-component-line="120"
+									data-component-file="Index.tsx" data-component-name="h4"
+									data-component-content="%7B%22text%22%3A%22Pie%20Charts%22%2C%22className%22%3A%22font-semibold%20text-foreground%22%7D"
+									class="font-semibold text-foreground">Pie Charts</h4>
+								<p data-lov-id="src/pages/Index.tsx:121:16" data-lov-name="p"
+									data-component-path="src/pages/Index.tsx" data-component-line="121"
+									data-component-file="Index.tsx" data-component-name="p"
+									data-component-content="%7B%22text%22%3A%22Great%20for%20showing%20proportions%22%2C%22className%22%3A%22text-sm%20text-muted-foreground%22%7D"
+									class="text-sm text-muted-foreground">Great for showing proportions</p>
+							</div>
+							<div data-lov-id="src/pages/Index.tsx:123:14" data-lov-name="div"
+								data-component-path="src/pages/Index.tsx" data-component-line="123"
+								data-component-file="Index.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22bg-gradient-card%20p-6%20rounded-xl%20shadow-card%22%7D"
+								class="bg-gradient-card p-6 rounded-xl shadow-card"><svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="lucide lucide-trending-up h-12 w-12 text-accent mb-4"
+									data-lov-id="src/pages/Index.tsx:124:16" data-lov-name="TrendingUp"
+									data-component-path="src/pages/Index.tsx" data-component-line="124"
+									data-component-file="Index.tsx" data-component-name="TrendingUp"
+									data-component-content="%7B%22className%22%3A%22h-12%20w-12%20text-accent%20mb-4%22%7D">
+									<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+									<polyline points="16 7 22 7 22 13"></polyline>
+								</svg>
+								<h4 data-lov-id="src/pages/Index.tsx:125:16" data-lov-name="h4"
+									data-component-path="src/pages/Index.tsx" data-component-line="125"
+									data-component-file="Index.tsx" data-component-name="h4"
+									data-component-content="%7B%22text%22%3A%22Progress%20Tracking%22%2C%22className%22%3A%22font-semibold%20text-foreground%22%7D"
+									class="font-semibold text-foreground">Progress Tracking</h4>
+								<p data-lov-id="src/pages/Index.tsx:126:16" data-lov-name="p"
+									data-component-path="src/pages/Index.tsx" data-component-line="126"
+									data-component-file="Index.tsx" data-component-name="p"
+									data-component-content="%7B%22text%22%3A%22Monitor%20student%20growth%20over%20time%22%2C%22className%22%3A%22text-sm%20text-muted-foreground%22%7D"
+									class="text-sm text-muted-foreground">Monitor student growth over time</p>
+							</div>
+							<div data-lov-id="src/pages/Index.tsx:128:14" data-lov-name="div"
+								data-component-path="src/pages/Index.tsx" data-component-line="128"
+								data-component-file="Index.tsx" data-component-name="div"
+								data-component-content="%7B%22className%22%3A%22bg-gradient-card%20p-6%20rounded-xl%20shadow-card%22%7D"
+								class="bg-gradient-card p-6 rounded-xl shadow-card"><svg
+									xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="lucide lucide-users h-12 w-12 text-primary mb-4"
+									data-lov-id="src/pages/Index.tsx:129:16" data-lov-name="Users"
+									data-component-path="src/pages/Index.tsx" data-component-line="129"
+									data-component-file="Index.tsx" data-component-name="Users"
+									data-component-content="%7B%22className%22%3A%22h-12%20w-12%20text-primary%20mb-4%22%7D">
+									<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+									<circle cx="9" cy="7" r="4"></circle>
+									<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+								</svg>
+								<h4 data-lov-id="src/pages/Index.tsx:130:16" data-lov-name="h4"
+									data-component-path="src/pages/Index.tsx" data-component-line="130"
+									data-component-file="Index.tsx" data-component-name="h4"
+									data-component-content="%7B%22text%22%3A%22Class%20Analytics%22%2C%22className%22%3A%22font-semibold%20text-foreground%22%7D"
+									class="font-semibold text-foreground">Class Analytics</h4>
+								<p data-lov-id="src/pages/Index.tsx:131:16" data-lov-name="p"
+									data-component-path="src/pages/Index.tsx" data-component-line="131"
+									data-component-file="Index.tsx" data-component-name="p"
+									data-component-content="%7B%22text%22%3A%22Understand%20your%20classroom%20better%22%2C%22className%22%3A%22text-sm%20text-muted-foreground%22%7D"
+									class="text-sm text-muted-foreground">Understand your classroom better</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section data-lov-id="src/pages/Index.tsx:139:6" data-lov-name="section"
+				data-component-path="src/pages/Index.tsx" data-component-line="139" data-component-file="Index.tsx"
+				data-component-name="section"
+				data-component-content="%7B%22className%22%3A%22container%20mx-auto%20px-4%20py-20%22%7D"
+				class="container mx-auto px-4 py-20">
+				<div data-lov-id="src/pages/Index.tsx:140:8" data-lov-name="div"
+					data-component-path="src/pages/Index.tsx" data-component-line="140" data-component-file="Index.tsx"
+					data-component-name="div"
+					data-component-content="%7B%22className%22%3A%22text-center%20bg-gradient-card%20rounded-3xl%20p-12%20shadow-card%22%7D"
+					class="text-center bg-gradient-card rounded-3xl p-12 shadow-card">
+					<h2 data-lov-id="src/pages/Index.tsx:141:10" data-lov-name="h2"
+						data-component-path="src/pages/Index.tsx" data-component-line="141"
+						data-component-file="Index.tsx" data-component-name="h2"
+						data-component-content="%7B%22text%22%3A%22Ready%20to%20Transform%20Your%20Teaching%3F%22%2C%22className%22%3A%22text-4xl%20font-bold%20text-foreground%20mb-6%22%7D"
+						class="text-4xl font-bold text-foreground mb-6">Ready to Transform Your Teaching?</h2>
+					<p data-lov-id="src/pages/Index.tsx:144:10" data-lov-name="p"
+						data-component-path="src/pages/Index.tsx" data-component-line="144"
+						data-component-file="Index.tsx" data-component-name="p"
+						data-component-content="%7B%22text%22%3A%22Join%20thousands%20of%20teachers%20who%20are%20already%20making%20their%20classrooms%20more%20engaging%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20with%20beautiful%2C%20instant%20data%20visualization.%22%2C%22className%22%3A%22text-xl%20text-muted-foreground%20mb-8%20max-w-2xl%20mx-auto%22%7D"
+						class="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Join thousands of teachers who are
+						already making their classrooms more engaging with beautiful, instant data visualization.</p>
+
+					<input type="email" required="" placeholder="Enter your email"
+						class="flex-1 w-full px-5 py-4 rounded-lg border border-border text-lg focus:outline-none focus:ring-2 focus:ring-primary transition h-12"
+						value="" style="max-width: 400px; max-height: 50px;">
+
+					<button onclick="handleSubmit(event)" data-lov-id="src/pages/Index.tsx:148:10"
+						data-lov-name="Button" style="margin-left:10px;" data-component-path="src/pages/Index.tsx"
+						data-component-line="148" data-component-file="Index.tsx" data-component-name="Button"
+						data-component-content="%7B%22text%22%3A%22Start%20Free%20%E2%80%94%20Create%20Your%20First%20Teaching%20Chart%22%2C%22className%22%3A%22text-lg%20px-8%20py-6%22%7D"
+						class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-gradient-hero text-primary-foreground hover:shadow-glow transform hover:scale-105 transition-all duration-300 font-semibold h-11 rounded-md text-lg px-8 py-6">
+						Request Demo</button>
+					<p data-lov-id="src/pages/Index.tsx:151:10" data-lov-name="p"
+						data-component-path="src/pages/Index.tsx" data-component-line="151"
+						data-component-file="Index.tsx" data-component-name="p"
+						data-component-content="%7B%22text%22%3A%22No%20credit%20card%20required%20%E2%80%A2%20Free%20forever%20plan%20available%22%2C%22className%22%3A%22text-sm%20text-muted-foreground%20mt-4%22%7D"
+						class="text-sm text-muted-foreground mt-4">No credit card required • Free forever plan available
+					</p>
+				</div>
+			</section>
+		</div>
+	</div>
+	</script>
+
+
+	<script>
+		const handleSubmit = async (e) => {
+			e.preventDefault();
+			let profession = 'teacher';
+
+			const parentElement = e.target.parentNode;
+			const emailInput = parentElement.querySelector('input[type="email"]');
+			const email = emailInput ? emailInput.value : '';
+
+			console.log(email);
+
+			if (email && email.length > 0 && email.includes('@')) {
+				await fetch("https://vizionary-backend-23fd9cc35914.herokuapp.com/add_email_to_fp", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ email, profession }),
+				});
+
+				alert('Successfully added to the waitlist!');
+			}
+			else {
+				alert('Please enter a valid email address');
+			}
+		};
+	</script>
+
+
+</body>
+
+</html>
